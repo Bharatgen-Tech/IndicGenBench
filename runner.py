@@ -104,8 +104,8 @@ class HuggingFaceLLM(LLMInterface):
             from transformers import AutoTokenizer, AutoModelForCausalLM
             
             logger.info(f"Unsloth not available, falling back to standard loading: {model_name}")
-            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-            self.model = AutoModelForCausalLM.from_pretrained(model_name).to(device)
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+            self.model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True, device_map="auto", torch_dtype="auto")
             self.using_unsloth = False
             
         self.device = device

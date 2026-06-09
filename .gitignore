@@ -1,4 +1,5 @@
 .venv
 __pycache__
 indicgenbench_evaluation.log
-results
+results*
+*.log

@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "name": "/fsxnew/post-training-data/vijay/converted_17b/checkpoint-3000",
+      "type": "huggingface",
+      "device": "cuda",
+      "trust_remote_code": true,
+      "device_map": "auto",
+      "num_gpus": 8
+    }
+  ],
+  "languages": ["hi", "bn", "ta", "te", "mr"],
+  "tasks": ["crosssum_in", "flores_in", "xquad_in", "xorqa_in"],
+  "splits": ["dev"],
+  "sample_size": 30
+}
