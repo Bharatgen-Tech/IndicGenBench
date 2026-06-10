@@ -39,6 +39,7 @@ if tok.pad_token is None:
 
 model = AutoModelForCausalLM.from_pretrained(MODEL, trust_remote_code=True, torch_dtype=torch.bfloat16)
 model = accelerator.prepare(model)
+model = accelerator.unwrap_model(model)
 model.eval()
 
 if accelerator.is_main_process:
